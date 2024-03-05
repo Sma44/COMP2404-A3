@@ -14,7 +14,7 @@ void School::addStudent(Student* stu){
     stuArr.add(stu);
 }
 
-void School::AddCourse(Course* course){
+void School::addCourse(Course* course){
     courseArr.add(course);
 }
 

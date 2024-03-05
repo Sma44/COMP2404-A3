@@ -10,7 +10,7 @@ class School{
         School(std::string="Not Defined");
         ~School();
         void addStudent(Student*);
-        void AddCourse(Course*);
+        void addCourse(Course*);
         void addRegistration(Student*, Course*);
         bool findStudent(std::string, Student**);
         bool findCourse(int, Course**);
