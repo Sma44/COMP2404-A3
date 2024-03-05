@@ -41,7 +41,7 @@ void CourseArray::print(){
     }
 }
 
-void CourseArray::print(string term{
+void CourseArray::print(string term){
     for (int i = 0; i < size; i++){
         if (arr[i]->getTerm() == term){
             arr[i]->print();
