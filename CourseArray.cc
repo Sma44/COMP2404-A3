@@ -15,6 +15,11 @@ CourseArray::~CourseArray(){
 }
 
 void CourseArray::add(Course* course){
+    if(size == MAX_ARR) {
+        cout << "course array length exceeded" << endl;
+        return;
+    }
+
     for (int i = 0; i < size; i++){
         if (course->lessThan(arr[i])){
             for (int j = size; j < i; j--){
@@ -29,14 +34,14 @@ void CourseArray::add(Course* course){
     size++;
 }
 
-void CourseArray::print() const {
+void CourseArray::print(){
     for (int i = 0; i < size; i++){
         arr[i]->print();
         cout << endl;
     }
 }
 
-void CourseArray::print(string term) const {
+void CourseArray::print(string term{
     for (int i = 0; i < size; i++){
         if (arr[i]->getTerm() == term){
             arr[i]->print();
@@ -45,7 +50,7 @@ void CourseArray::print(string term) const {
     }
 }
 
-bool CourseArray::find(int id, Course** c) const {
+bool CourseArray::find(int id, Course** c){
     for (int i = 0; i < size; i++){
         if (arr[i]->getId() == id){
             *c = arr[i];

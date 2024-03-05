@@ -9,8 +9,8 @@ class StuArray{
         StuArray();
         ~StuArray();
         void add(Student*);
-        void print() const;
-        bool find(std::string, Student**) const;
+        void print();
+        bool find(std::string, Student**);
     private:
         Student* arr[MAX_ARR];
         int size;

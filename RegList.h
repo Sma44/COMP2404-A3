@@ -15,7 +15,7 @@ class RegList{
         ~RegList();
         void add(Registration*);
         void cleanData();
-        void print() const;
+        void print();
 
     private:
         Node* head;

@@ -9,9 +9,9 @@ class CourseArray{
         CourseArray();
         ~CourseArray();
         void add(Course*);
-        void print() const;
-        void print(std::string term) const;
-        bool find(int, Course**) const;
+        void print();
+        void print(std::string term);
+        bool find(int, Course**);
 
     private:
         Course* arr[MAX_ARR];

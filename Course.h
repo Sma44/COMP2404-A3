@@ -6,11 +6,11 @@
 class Course{
     public:
         Course(std::string="N/A", std::string="N/A", int=0, char='N', std::string="N/A");
-        bool lessThan(Course*) const;
-        void print() const;
-        int getId() const;
-        std::string getTerm() const;
-        std::string getFormatString() const;
+        bool lessThan(Course*);
+        void print();
+        int getId();
+        std::string getTerm();
+        std::string getFormatString();
 
     private:
         static int nextId; 

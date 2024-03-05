@@ -10,7 +10,7 @@ int Course::nextId = COURSE_ID;
 Course::Course(string t, string s, int c, char sec, string i) 
 : id(nextId++), term(t), subject(s), code(c), section(sec), instructor(i){}
 
-bool Course::lessThan(Course* course) const {
+bool Course::lessThan(Course* course){
 
     if (term < course->term){ return true; }
     if (term > course->term){ return false; }
@@ -27,15 +27,15 @@ bool Course::lessThan(Course* course) const {
     return false;
 }
 
-void Course::print() const {
+void Course::print(){
     cout << setw(6) << left << id << "Term:" << term << setw(5) << subject
     << code << setw(4) << section << setw(7) << "Instr:" << setw(10) << instructor;
 }
 
-string Course::getTerm() const { return term; }
+string Course::getTerm(){ return term; }
 
-int Course::getId() const { return id; }
+int Course::getId(){ return id; }
 
-string Course::getFormatString() const {
+string Course::getFormatString(){
     return subject + " " + to_string(code) + "-" + section;
 }

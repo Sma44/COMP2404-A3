@@ -15,6 +15,11 @@ StuArray::~StuArray(){
 }
 
 void StuArray::add(Student* student){
+    if(size == MAX_ARR) {
+        cout << "student array length exceeded" << endl;
+        return;
+    }
+
     for (int i = 0; i < size; i++){
         if (student->lessThan(arr[i])){
             for (int j = size; j < i; j--){
@@ -29,14 +34,14 @@ void StuArray::add(Student* student){
     size++;
 }
 
-void StuArray::print() const {
+void StuArray::print(){
     for (int i = 0; i < size; i++){
         arr[i]->print();
         cout << endl;
     }
 }
 
-bool StuArray::find(string num, Student** stu) const {
+bool StuArray::find(string num, Student** stu){
     for (int i = 0; i < size; i++){
         if (arr[i]->getNumber() == num){
             *stu = arr[i];

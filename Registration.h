@@ -7,9 +7,9 @@ class Registration{
 
     public:
         Registration(Student*, Course*);
-        bool lessThan(Registration*) const;
-        void print() const;
-        Student* getStu() const;
+        bool lessThan(Registration*);
+        void print();
+        Student* getStu();
 
     private:
         static int nextId;

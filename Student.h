@@ -5,10 +5,10 @@
 class Student{
     public:
         Student(std::string="N/A", std::string="N/A", std::string="N/A");
-        bool lessThan(Student*) const;
-        void print() const;
-        std::string getNumber() const;
-        std::string getName() const;
+        bool lessThan(Student*);
+        void print();
+        std::string getNumber();
+        std::string getName();
 
     private:
         std::string number;

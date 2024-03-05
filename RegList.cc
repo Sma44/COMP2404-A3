@@ -66,7 +66,7 @@ void RegList::cleanData(){
     }
 }
 
-void RegList::print() const {
+void RegList::print(){
     Node* currNode = head;
     Node* nextNode;
 
