@@ -6,6 +6,7 @@
 #include <string>
 
 /// @brief control class to handle control flow between user and program
+/// NOTE: added a helper function to simplify controlflow in launch function
 class Control{
   public:
     Control();
