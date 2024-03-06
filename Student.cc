@@ -4,16 +4,13 @@
 #include <iomanip>
 using namespace std;
 
-
 Student::Student(string num, string n, string pgm) {
-    majorPgm = pgm;
-    name = n;
     number = num;
+    name = n;
+    majorPgm = pgm;
 }
 
 bool Student::lessThan(Student* stu){
-    // cout << "current student name: "<< name << endl;
-    // cout << "other student name: "<< stu->name << endl;
     return (name < stu->name) ? true : false;
 }
 
