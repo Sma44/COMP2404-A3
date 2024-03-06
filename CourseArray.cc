@@ -4,9 +4,7 @@
 #include <string>
 using namespace std;
 
-CourseArray::CourseArray(){
-    size = 0;
-}
+CourseArray::CourseArray() : size(0) {}
 
 CourseArray::~CourseArray(){
     for (int i = 0; i < size; i++){
@@ -22,7 +20,7 @@ void CourseArray::add(Course* course){
 
     for (int i = 0; i < size; i++){
         if (course->lessThan(arr[i])){
-            for (int j = size; j < i; j--){
+            for (int j = size; j > i; j--){
                 arr[j] = arr[j-1];
             }
             arr[i] = course;
