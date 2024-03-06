@@ -28,7 +28,7 @@ bool Course::lessThan(Course* course){
 }
 
 void Course::print(){
-    cout << setw(6) << left << id << "Term:" << term << setw(5) << subject
+    cout << setw(6) << left << id << "Term: " << setw(6) << term << setw(5) << subject << setw(5)
     << code << setw(4) << section << setw(7) << "Instr:" << setw(10) << instructor;
 }
 
