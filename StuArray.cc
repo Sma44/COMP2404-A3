@@ -18,23 +18,17 @@ void StuArray::add(Student* student){
         return;
     }
 
-    // bool flag = false;
-
     for (int i = 0; i < size; i++){
-
         if (student->lessThan(arr[i])){
             for (int j = size; j > i; j--){
                 arr[j] = arr[j-1];
             }
             arr[i] = student;
-            // flag = true;
             size++;
             return;
         }
     }
-    // if (!flag){
     arr[size] = student;
-    // }
     size++;
 }
 
