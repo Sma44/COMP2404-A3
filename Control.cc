@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 #include <string>
-
 #include "Control.h"
 
 Control::Control(){
@@ -59,21 +58,16 @@ void Control::launch(){
     view.showAdminMenu(userChoice);
     switch(userChoice){
       case 1:
-        view.printStr("\n");
         school->printStudents();
         break;
       case 2:
-        view.printStr("\n");
         school->printCourses();
         break;
       case 3: 
-        view.printStr("\n");
         school->printRegistrations();
         break;
       case 4: 
-        view.printStr("\n");
         stuControlFlow();
-        view.printStr("\n");
         break;
       case 0: 
         view.printStr("\nExiting...\n");
@@ -83,33 +77,31 @@ void Control::launch(){
 }
 
 void Control::stuControlFlow(){
-  int stuChoice;
-  string stuNum;
+  int stuChoice, cId;
+  string stuNum, term;
   bool cFound = false;
+  Student* stu = nullptr;
+  Course* course = nullptr;
   
-  view.printStr("Please enter student number: ");
+  view.printStr("\nPlease enter student number: ");
   view.readStr(stuNum);
 
-  Student* stu = nullptr;
   while(!school->findStudent(stuNum, &stu)){
     view.printStr("\nERROR: Student number not found. Try again: ");
+    view.readStr(stuNum);
   }
-  view.printStr("\n\n\n");
+  view.printStr("\n\n");
 
   do{
     view.showStudentMenu(stu->getName(), stuChoice);
-    string term;
-    int cId;
-    Course* course = nullptr;
     switch(stuChoice){
       case 1: 
-        view.printStr("enter a term: ");
+        view.printStr("\nenter a term: ");
         view.readStr(term);
         view.printStr("\n");
         school->printCourseByTerm(term);
         break;
       case 2: 
-        view.printStr("\n");
         school->printRegistrationsByStu(stu);
         break;
       case 3:
