@@ -32,27 +32,27 @@ bool School::findCourse(int id, Course** course){
 }
 
 void School::printStudents(){
-    cout << "STUDENTS OF " << name << endl;
+    cout << endl << "STUDENTS OF " << name << endl;
     stuArr.print();
 }
 
 void School::printCourses(){
-    cout << "COURSES OF " << name << endl;
+    cout << endl << "COURSES OF " << name << endl;
     courseArr.print();
 }
 
 void School::printCourseByTerm(string term){
-    cout << "COURSES OF " << name << " - TERM: " << term << endl;
+    cout << "COURSES OF " << name << " OF TERM: " << term << endl;
     courseArr.print(term);
 }
 
 void School::printRegistrations(){
-    cout << "REGISTRATIONS OF " << name << endl;
+    cout << endl << "REGISTRATIONS OF " << name << endl;
     regList.print();
 }
 
 void School::printRegistrationsByStu(Student* stu){
-    cout << "REGISTRATIONS OF " << name << " - FOR STUDENT: " << stu->getName() << endl;
+    cout << endl << "REGISTRATIONS OF " << name << " FOR STUDENT: " << stu->getName() << endl;
     RegList stuList(regList, stu);
     stuList.print();
 }

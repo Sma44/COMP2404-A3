@@ -71,6 +71,7 @@ void RegList::cleanData(){
 void RegList::print(){
     Node* currNode = head;
     Node* nextNode = nullptr;
+    
     if (currNode == nullptr){
         std::cout << "HEAD: nullptr" << std::endl;
         std::cout << "TAIL: nullptr" << std::endl;
@@ -83,6 +84,7 @@ void RegList::print(){
         nextNode = currNode->next;
         currNode = nextNode;
     }
+
     std::cout << "HEAD: ";
     head->data->print();
     std::cout << std::endl << "Tail: ";

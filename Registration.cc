@@ -13,7 +13,7 @@ bool Registration::lessThan(Registration* reg){
 }
 
 void Registration::print(){
-    cout << setw(7) << left << id << setw(14) << left << student->getName() 
+    cout << setw(7) << left << id << setw(10) << left << student->getName() 
     << setw(5) << left << course->getTerm() << setw(20) << course->getFormatString();
 }
 
