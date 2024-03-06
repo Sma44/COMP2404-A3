@@ -6,6 +6,8 @@ RegList::RegList(): head(nullptr), tail(nullptr) {}
 
 RegList::RegList(RegList& otherList, Student* stu){
     Node* currNode = otherList.head;
+    head = nullptr;
+    tail = nullptr;
 
     while(currNode != nullptr){
         if (currNode->data->getStu()->getNumber() == stu->getNumber()){
@@ -17,7 +19,7 @@ RegList::RegList(RegList& otherList, Student* stu){
 
 RegList::~RegList(){
     Node* currNode = head;
-    Node* nextNode;
+    Node* nextNode = nullptr;
 
     while(currNode != nullptr){
         nextNode = currNode->next;
@@ -57,7 +59,7 @@ void RegList::add(Registration* r){
 
 void RegList::cleanData(){
     Node* currNode = head;
-    Node* nextNode;
+    Node* nextNode = nullptr;
 
     while(currNode != nullptr){
         nextNode = currNode->next;
@@ -68,7 +70,12 @@ void RegList::cleanData(){
 
 void RegList::print(){
     Node* currNode = head;
-    Node* nextNode;
+    Node* nextNode = nullptr;
+    if (currNode == nullptr){
+        std::cout << "HEAD: nullptr" << std::endl;
+        std::cout << "TAIL: nullptr" << std::endl;
+        return;
+    }
 
     while(currNode != nullptr){
         currNode->data->print();

@@ -59,22 +59,19 @@ void Control::launch(){
     view.showAdminMenu(userChoice);
     switch(userChoice){
       case 1:
-        view.printStr("\n\n\n");
-        school->printStudents();
         view.printStr("\n");
+        school->printStudents();
         break;
       case 2:
-        view.printStr("\n\n\n");
-        school->printCourses();
         view.printStr("\n");
+        school->printCourses();
         break;
       case 3: 
-        view.printStr("\n\n\n");
-        school->printRegistrations();
         view.printStr("\n");
+        school->printRegistrations();
         break;
       case 4: 
-        view.printStr("\n\n\n");
+        view.printStr("\n");
         stuControlFlow();
         view.printStr("\n");
         break;
@@ -108,18 +105,17 @@ void Control::stuControlFlow(){
       case 1: 
         view.printStr("enter a term: ");
         view.readStr(term);
-        view.printStr("\n\n");
+        view.printStr("\n");
         school->printCourseByTerm(term);
-        view.printStr("\n\n\n");
         break;
-      case 2: // View registrations by student
-        view.printStr("\n\n");
+      case 2: 
+        view.printStr("\n");
         school->printRegistrationsByStu(stu);
-        view.printStr("\n\n");
         break;
       case 3:
         cId = 0;
         view.printStr("\nPlease enter course id: ");
+        view.readInt(cId);
         cFound = school->findCourse(cId, &course);
         if (!cFound){
           view.printStr("ERROR: Course not found\n");

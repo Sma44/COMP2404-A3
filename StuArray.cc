@@ -15,30 +15,40 @@ StuArray::~StuArray(){
 }
 
 void StuArray::add(Student* student){
+
+    // cout << "in add function\n\n";
+
     if(size == MAX_ARR) {
         cout << "student array length exceeded" << endl;
         return;
     }
+
     bool flag = false;
 
-    if (size == 0){
-        cout << "in size block\n";
-        arr[size] = student;
-        size++;
-        return;
-    }
-    cout << "passed size check\n";
+    // if (size == 0){
+    //     // cout << "in size = 0 block\n\n";
+    //     arr[size] = student;
+    //     size++;
+    //     return;
+    // }
 
-    cout << "size = " << size << endl;
+    // cout << "passed size check\n\n";
+    // cout << "size = " << size << endl;
+    // cout << "\n";
 
     for (int i = 0; i < size; i++){
-        student->print();
-        cout << "\n";
-        arr[i]->print();
-        cout << endl;
+        
+        // student->print();
+        // cout << "\n";
+        // arr[i]->print();
+        // cout << "\n";
+        // cout << "\n";
+        // cout << endl;
+
         if (student->lessThan(arr[i])){
-            cout << "entered lessTHan block\n";
-            for (int j = size; j < i; j--){
+            // cout << "entered lessTHan block\n";
+            // cout <<"\n\n";
+            for (int j = size; j > i; j--){
                 arr[j] = arr[j-1];
             }
             arr[i] = student;
@@ -50,6 +60,7 @@ void StuArray::add(Student* student){
     if (!flag){
         arr[size] = student;
     }
+    // cout <<"\n\n";
     size++;
 }
 
