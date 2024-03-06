@@ -3,7 +3,7 @@
 #include "Course.h"
 #include <string>
 
-
+/// @brief collections class to store course objects
 class CourseArray{
     public:
         CourseArray();
@@ -16,7 +16,5 @@ class CourseArray{
     private:
         Course* arr[MAX_ARR];
         int size;
-
 };
-
 #endif

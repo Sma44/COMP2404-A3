@@ -5,9 +5,8 @@
 #include "School.h"
 #include <string>
 
-
-class Control
-{
+/// @brief control class to handle control flow between user and program
+class Control{
   public:
     Control();
     ~Control();
@@ -19,7 +18,5 @@ class Control
     void initStudents(School*);
     void initCourses(School*);
     void stuControlFlow();
-
 };
-
 #endif

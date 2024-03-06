@@ -3,6 +3,8 @@
 #include <string>
 #include "defs.h"
 
+/// @brief course class to model university courses. 
+/// Note: the lessThan function is a strict less than equality
 class Course{
     public:
         Course(std::string="N/A", std::string="N/A", int=0, char='N', std::string="N/A");
@@ -20,8 +22,5 @@ class Course{
         int code;
         char section;
         std::string instructor;
-
 };
-
-
 #endif

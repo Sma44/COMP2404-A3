@@ -5,6 +5,7 @@
 #include "RegList.h"
 #include <string>
 
+/// @brief school class to model relationship between students enrolled and their courses registered
 class School{
     public:
         School(std::string="Not Defined");
@@ -26,5 +27,4 @@ class School{
         CourseArray courseArr;
         RegList regList;
 };
-
 #endif

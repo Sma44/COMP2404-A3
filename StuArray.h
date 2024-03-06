@@ -4,6 +4,7 @@
 #include <string>
 #include "defs.h"
 
+/// @brief collection class for student objects
 class StuArray{
     public:
         StuArray();
@@ -16,5 +17,4 @@ class StuArray{
         int size;
 
 };
-
 #endif
