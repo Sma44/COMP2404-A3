@@ -79,9 +79,7 @@ void Control::launch(){
         view.printStr("\n");
         break;
       case 0: 
-        break;
-      default:
-        view.printStr("\nUser Choice Invalid. Try again:\n");
+        view.printStr("\nExiting...\n");
         break;
     }      
   } while (userChoice != 0);
@@ -90,6 +88,7 @@ void Control::launch(){
 void Control::stuControlFlow(){
   int stuChoice;
   string stuNum;
+  bool cFound = false;
   
   view.printStr("Please enter student number: ");
   view.readStr(stuNum);
@@ -103,6 +102,8 @@ void Control::stuControlFlow(){
   do{
     view.showStudentMenu(stu->getName(), stuChoice);
     string term;
+    int cId;
+    Course* course = nullptr;
     switch(stuChoice){
       case 1: 
         view.printStr("enter a term: ");
@@ -117,10 +118,9 @@ void Control::stuControlFlow(){
         view.printStr("\n\n");
         break;
       case 3:
-        int cId;
+        cId = 0;
         view.printStr("\nPlease enter course id: ");
-        Course* course = nullptr;
-        bool cFound = school->findCourse(cId, &course);
+        cFound = school->findCourse(cId, &course);
         if (!cFound){
           view.printStr("ERROR: Course not found\n");
           break;
@@ -128,9 +128,7 @@ void Control::stuControlFlow(){
         school->addRegistration(stu,course);
         break;
       case 0: 
-        break;
-      default:
-        view.printStr("ERROR: choice invalid\n");
+        view.printStr("\nExiting...\n");
         break;
     }
   } while (stuChoice != 0);
